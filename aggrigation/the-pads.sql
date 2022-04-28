@@ -1,0 +1,19 @@
+
+/*
+FIRST QUERY
+*/
+
+SELECT CONCAT(name,"(",UPPER(LEFT(OCCUPATION,1)),")")
+FROM OCCUPATIONS
+ORDER BY name 
+;
+
+/*
+SECOND QUERY
+*/
+
+SELECT concat('There are a total of ' ,  count(OCCUPATION) ," ", LOWER(OCCUPATION) , "s.")
+FROM OCCUPATIONS
+GROUP BY OCCUPATION
+ORDER BY count(OCCUPATION) asc, OCCUPATION asc
+;
